@@ -1,0 +1,358 @@
+# depslib dependency file v1.0
+1524045128 source:c:\users\dhany\desktop\maze\main.cpp
+	<string.h>
+	<CommonThings.h>
+	<Maze.h>
+	<iostream>
+	<Timer.h>
+	<player.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<Enemies.h>
+	<wall.h>
+	<math.h>
+
+1489447129 c:\users\dhany\desktop\maze\common\inc\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1524044681 c:\users\dhany\desktop\maze\include\maze.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524045027 source:c:\users\dhany\desktop\maze\src\maze.cpp
+	<Maze.h>
+
+1215483208 c:\users\dhany\desktop\maze\common\inc\soil.h
+
+1524015081 c:\users\dhany\desktop\maze\include\timer.h
+	<time.h>
+
+1521706724 source:c:\users\dhany\desktop\maze\src\timer.cpp
+	"Timer.h"
+
+1524044703 c:\users\dhany\desktop\maze\include\player.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524044703 source:c:\users\dhany\desktop\maze\src\player.cpp
+	<Player.h>
+
+1524044428 source:c:\users\dhany\desktop\maze\src\enemies.cpp
+	<Enemies.h>
+	<iostream>
+
+1524043763 c:\users\dhany\desktop\maze\include\enemies.h
+	<CommonThings.h>
+	<Maze.h>
+	<time.h>
+	<thread>
+	<string>
+
+1524044703 source:c:\users\dhany\desktop\maze\src\wall.cpp
+	"wall.h"
+	<iostream>
+
+1524044428 c:\users\dhany\desktop\maze\include\wall.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524015365 c:\users\dhany\desktop\maze\include\commonthings.h
+	<GL/gl.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524475938 source:c:\users\dhanyu\desktop\maze\main.cpp
+	<string.h>
+	<CommonThings.h>
+	<Maze.h>
+	<iostream>
+	<Timer.h>
+	<player.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<Enemies.h>
+	<wall.h>
+	<math.h>
+
+1524046490 c:\users\dhanyu\desktop\maze\include\commonthings.h
+	<GL/gl.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1215483208 c:\users\dhanyu\desktop\maze\common\inc\soil.h
+
+1524046490 c:\users\dhanyu\desktop\maze\include\timer.h
+	<time.h>
+
+1524475097 c:\users\dhanyu\desktop\maze\include\maze.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1489447130 c:\users\dhanyu\desktop\maze\common\inc\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1524475938 c:\users\dhanyu\desktop\maze\include\player.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524475097 c:\users\dhanyu\desktop\maze\include\enemies.h
+	<CommonThings.h>
+	<Maze.h>
+	<time.h>
+	<thread>
+	<string>
+	<math.h>
+
+1524475938 c:\users\dhanyu\desktop\maze\include\wall.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524473882 source:c:\users\dhanyu\desktop\maze\src\enemies.cpp
+	<Enemies.h>
+	<iostream>
+
+1524475938 source:c:\users\dhanyu\desktop\maze\src\maze.cpp
+	<Maze.h>
+
+1524473716 source:c:\users\dhanyu\desktop\maze\src\player.cpp
+	<Player.h>
+
+1524046490 source:c:\users\dhanyu\desktop\maze\src\timer.cpp
+	"Timer.h"
+
+1524476009 source:c:\users\dhanyu\desktop\maze\src\wall.cpp
+	<wall.h>
+	<iostream>
+
+1525797690 source:c:\users\harka\desktop\maze\main.cpp
+	<string.h>
+	<CommonThings.h>
+	<Maze.h>
+	<iostream>
+	<Timer.h>
+	<player.h>
+	<fstream>
+	<Menu.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<Enemies.h>
+	<wall.h>
+	<math.h>
+	<bits/stdc++.h>
+	<vector>
+	<bits/stdc++.h>
+
+1524522863 c:\users\harka\desktop\maze\include\commonthings.h
+	<GL/gl.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524522862 c:\users\harka\desktop\maze\common\inc\soil.h
+
+1524522863 c:\users\harka\desktop\maze\include\timer.h
+	<time.h>
+
+1524522863 c:\users\harka\desktop\maze\include\maze.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524522862 c:\users\harka\desktop\maze\common\inc\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1525732296 c:\users\harka\desktop\maze\include\player.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524522863 c:\users\harka\desktop\maze\include\enemies.h
+	<CommonThings.h>
+	<Maze.h>
+	<time.h>
+	<thread>
+	<string>
+	<math.h>
+
+1525628607 c:\users\harka\desktop\maze\include\wall.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1525584707 source:c:\users\harka\desktop\maze\src\enemies.cpp
+	<Enemies.h>
+	<iostream>
+
+1524522863 source:c:\users\harka\desktop\maze\src\maze.cpp
+	<Maze.h>
+
+1525733703 source:c:\users\harka\desktop\maze\src\player.cpp
+	<Player.h>
+
+1524522863 source:c:\users\harka\desktop\maze\src\timer.cpp
+	"Timer.h"
+
+1525628574 source:c:\users\harka\desktop\maze\src\wall.cpp
+	<wall.h>
+	<iostream>
+
+1525734116 source:c:\users\harka\desktop\maze\src\menu.cpp
+	"Menu.h"
+
+1525648079 c:\users\harka\desktop\maze\include\menu.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1525584707 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\enemies.cpp
+	<Enemies.h>
+	<iostream>
+
+1524522863 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\enemies.h
+	<CommonThings.h>
+	<Maze.h>
+	<time.h>
+	<thread>
+	<string>
+	<math.h>
+
+1524522863 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\commonthings.h
+	<GL/gl.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+
+1524522862 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\common\inc\soil.h
+
+1524522863 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\timer.h
+	<time.h>
+
+1524522863 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\maze.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524522862 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\common\inc\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1524522863 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\maze.cpp
+	<Maze.h>
+
+1525734116 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\menu.cpp
+	"Menu.h"
+
+1525648079 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\menu.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1525733703 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\player.cpp
+	<Player.h>
+
+1525732296 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\player.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+
+1524522863 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\timer.cpp
+	"Timer.h"
+
+1525628574 source:e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\src\wall.cpp
+	<wall.h>
+	<iostream>
+
+1525628607 e:\google drive\college stuff\csu fresno\2018\spring 2018\csci 115\project 2\maze\include\wall.h
+	<CommonThings.h>
+	<string.h>
+	<gl/gl.h>
+	<GL/glut.h>
+	<SOIL.h>
+	<iostream>
+	<Timer.h>
+	<math.h>
+

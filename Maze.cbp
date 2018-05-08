@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Maze" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option extended_obj_names="1" />
+		<Build>
+			<Target title="Debug">
+				<Option output="Maze" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../Maze" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Maze" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/dhany/Desktop/CSCI173/Common/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add directory="Common/inc" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add library="Common/lib/libSOIL.a" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add library="Common/lib/glut32.lib" />
+			<Add library="Common/lib/irrKlang.lib" />
+			<Add library="Common/lib/libirrKlang.a" />
+			<Add directory="Common/inc" />
+			<Add directory="include" />
+		</Linker>
+		<Unit filename="include/CommonThings.h" />
+		<Unit filename="include/Enemies.h" />
+		<Unit filename="include/Maze.h" />
+		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Timer.h" />
+		<Unit filename="include/player.h" />
+		<Unit filename="include/wall.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Enemies.cpp" />
+		<Unit filename="src/Maze.cpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Timer.cpp" />
+		<Unit filename="src/player.cpp" />
+		<Unit filename="src/wall.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
