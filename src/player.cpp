@@ -1,6 +1,6 @@
 /*
- * MAZE Game Framework
- * Written by Dr. Dhanyu Amarasinghe Spring 2018
+ * MAZE Game
+ *
  */
 
 #include <Player.h>
@@ -11,8 +11,8 @@ Player::Player()
 {
     //ctor
     playerDir = "down";
-    arrowLoc.x = 0.2;
-    arrowLoc.y =0.5;
+    arrowLoc.x = 0;
+    arrowLoc.y = 0;
     arrAngle = 0;
     arrowStatus = false;
     livePlayer = true;
@@ -60,13 +60,13 @@ if(arrowStatus){
   }
 }
 
-void Player::shootArrow()
+void Player::shootArrow(char* Dir)
 {   if(livePlayer){
     if(!arrowStatus)
     {
-      arrowStatus=true;
+      arrowStatus= false;
 
-      if(strcmp(playerDir, "left")==0)
+      if(strcmp(Dir, "left")==0)
       {
         arrAngle = -90;
         arrXdir=-1;
@@ -74,7 +74,7 @@ void Player::shootArrow()
         arrowLoc.x = plyLoc.x-unitWidth/2;
         arrowLoc.y = plyLoc.y;
       }
-      if(strcmp(playerDir, "right")==0)
+      if(strcmp(Dir, "right")==0)
       {
         arrAngle =90;
         arrXdir=1;
@@ -82,7 +82,7 @@ void Player::shootArrow()
         arrowLoc.x = plyLoc.x+unitWidth/2;
         arrowLoc.y = plyLoc.y;
       }
-      if(strcmp(playerDir, "up")==0)
+      if(strcmp(Dir, "up")==0)
       {
         arrXdir=0;
         arrYdir=1;
@@ -91,7 +91,7 @@ void Player::shootArrow()
         arrowLoc.y = plyLoc.y+unitWidth/2;
         arrowLoc.x = plyLoc.x;
       }
-      if(strcmp(playerDir, "down")==0)
+      if(strcmp(Dir, "down")==0)
       {
         arrXdir=0;
         arrYdir=-1;

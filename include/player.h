@@ -25,7 +25,7 @@ class Player
 
         void drawplayer();                 // Draw Player image
         void drawArrow();                  // Draw Arrow
-        void shootArrow();                 // Shoot arrow movement
+        void shootArrow(char*);                 // Shoot arrow movement
 
         void initPlayer(int, char *,int);  // initialize the player with grid size, image, frames
         void placePlayer(int,int);         // place the player

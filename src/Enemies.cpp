@@ -45,6 +45,7 @@ void Enemies::initEnm(int grid,int numFrames, char * FileName)
 
 void Enemies::drawEnemy()
 {
+    if (live){
     glColor3f(1.0,1.0,1.0);
     glBindTexture(GL_TEXTURE_2D,enmTex);
 
@@ -69,6 +70,7 @@ void Enemies::drawEnemy()
         glVertex3f(1,-1,0.0f);
      glEnd();
      glPopMatrix();
+    }
 }
 
 void Enemies::placeEnemy(int x, int y)

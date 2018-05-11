@@ -25,6 +25,9 @@
 #include <math.h>
 #include<bits/stdc++.h>
 #include<vector>
+#include<bits/stdc++.h>
+#define ROW 10
+#define COL 10
 
 /* GLUT callback Handlers */
 
@@ -46,9 +49,11 @@ int _grid[10][10];
 vector<int> moves;
 int state = 0;
 //int visited[10][10];
+const char* FileName;
 
 void display(void);                             // Main Display : this runs in a loop
-
+void solidsearch();
+void Placer();
 
 void initialize()
 {
@@ -71,12 +76,8 @@ void resize(int width, int height)              // resizing case on the window
 //====================================================================================================================================================
 
 
-// A C++ Program to implement A* Search Algorithm
-#include<bits/stdc++.h>
-using namespace std;
+// implement A* Search Algorithm
 
-#define ROW 10
-#define COL 10
 
 // Creating a shortcut for int, int pair type
 typedef pair<int, int> Pair;
@@ -137,7 +138,7 @@ double calculateHValue(int row, int col, Pair dest)
 // to destination
 void tracePath(cell cellDetails[][COL], Pair dest)
 {
-    printf ("\nThe Path is ");
+   // printf ("\nThe Path is ");
     int row = dest.first;
     int col = dest.second;
 
@@ -158,7 +159,7 @@ void tracePath(cell cellDetails[][COL], Pair dest)
     {
         pair<int,int> p = Path.top();
         Path.pop();
-        printf("-> (%d,%d) ",p.first,p.second);
+       // printf("-> (%d,%d) ",p.first,p.second);
         moves.push_back(p.first);
         moves.push_back(p.second);
 
@@ -466,14 +467,7 @@ void aStarSearch(int grid[][COL], Pair src, Pair dest,int countl)
                 hNew = calculateHValue(i, j-1, dest);
                 fNew = gNew + hNew;
 
-                // If it isn’t on the open list, add it to
-                // the open list. Make the current square
-                // the parent of this square. Record the
-                // f, g, and h costs of the square cell
-                //                OR
-                // If it is on the open list already, check
-                // to see if this path to that square is better,
-                // using 'f' cost as the measure.
+
                 if (cellDetails[i][j-1].f == FLT_MAX ||
                         cellDetails[i][j-1].f > fNew)
                 {
@@ -516,12 +510,14 @@ cout<<endl;
 
 void LocationChecker()
 {
-    cout<<" Player "<< P->getPlayerLoc().x<< "    "<<P->getPlayerLoc().y<<endl;
+               cout<<" Player                  "<< P->getPlayerLoc().x<< "    "<<P->getPlayerLoc().y<<endl;
+               cout<<" Arrow                   "<<P->getArrowLoc().x<<"     "<<P->getArrowLoc().y<<endl;
 
-      for(int i=0;i<1;i++)
+      for(int i=0;i<10;i++)
             {
-                //cout<<"Enemy number = "<<i<<endl;
+                cout<<"Enemy number = "<<i<<" ";
                 cout<<" Enemy  "<<E[i].getEnemyLoc().x<<"    "<<E[i].getEnemyLoc().y<<endl;
+
             }
 
 
@@ -532,20 +528,18 @@ void LocationChecker()
       //      }
 }
 
+
+void solidsearch(){
+
+
+
+
+}
 void collisionDetector()
 {
-    LocationChecker();
+    //LocationChecker();
 
-                for(int i=0;i<10;i++)
-            {
 
-              if (E[i].getEnemyLoc().x == P->getPlayerLoc().x && E[i].getEnemyLoc().y == P->getPlayerLoc().y  )
-              {
-
-                      cout<<" collision with Enemy "<<endl;
-                      P->livePlayer=false;
-              }
-            }
 
             int count1=0,x1,x2,x3,x4;
             for(int i=0;i<row;i++)
@@ -560,14 +554,18 @@ void collisionDetector()
                         x3=P->getPlayerLoc().x;
                         x4=P->getPlayerLoc().y;
 
-                    //cout<<x1<<" "<<x2<<"----"<<x3<<" "<<x4<<endl;
+                    cout<<"eNEMY  "<<x1<<" "<<x2<<endl;
+                    cout<<"PlAYER "<<x3<<" "<<x4<<endl;
                       Pair src = make_pair(x1, x2);
                       Pair dest = make_pair(x3, x4);
 
                     aStarSearch(_grid, src, dest,count1);
-                cout<<endl;
-                cout<<"Enemy E"<<count1<<":"<<moves.at(2)<<" "<<moves.at(3)<<endl;
-                cout<<"Enemy E"<<count1<<":"<<x1<<"   "<<x2<<endl;
+               // cout<<endl;
+              //  cout<<"Enemy E"<<count1<<":"<<moves.at(2)<<" "<<moves.at(3)<<endl;
+              //  cout<<"Enemy E"<<count1<<":"<<x1<<"   "<<x2<<endl;
+
+
+
 
                if(x1-1==moves.at(2)  &&  x2==moves.at(3))
                E[count1].moveEnemy("left");
@@ -578,19 +576,61 @@ void collisionDetector()
                else if(x1==moves.at(2) && x2+1==moves.at(3))
                  E[count1].moveEnemy("up");
 
-
-
                 initialize();
-
-
-
-
                         moves.clear();
                          count1++;
                     }
                 }
             }
-             cout<<"Number of Enemies:"<<count1<<endl;
+
+
+             for(int i=0;i<10;i++)
+                {
+
+                       if (E[i].getEnemyLoc().x == P->getPlayerLoc().x && E[i].getEnemyLoc().y == P->getPlayerLoc().y)
+                        {
+                            LocationChecker();
+                            cout<<" collision with Enemy "<<endl;
+                            state=2;
+                            P->livePlayer=false;
+
+                        }
+            }
+
+
+
+             for(int i=0;i<10;i++)
+                {
+
+                       if (E[i].getEnemyLoc().x == P->getArrowLoc().x && E[i].getEnemyLoc().y == P->getArrowLoc().y)
+                        {
+                            LocationChecker();
+                            cout<<" Enemy dead "<<endl;
+
+                            E[i].live = false;
+
+                        }
+            }
+
+
+
+
+            if (M->GetChestLoc().x == P->getPlayerLoc().x && M->GetChestLoc().y ==P->getPlayerLoc().y)
+            {
+                state =3;
+                cout<<"won"<<endl;
+                M->liveChest = false;
+            }
+
+
+            if (M->GetStArrwsLoc().x == P->getPlayerLoc().x && M->GetStArrwsLoc().y ==P->getPlayerLoc().y)
+            {
+                P->arrowStatus = true;
+                M->liveSetOfArrws = false;
+            }
+
+           //  cout<<"Number of Enemies:"<<count1<<endl;
+
 
 }
 
@@ -600,8 +640,10 @@ void collisionDetector()
 
 void Placer(){
 
+   // FILE * f1;
     fstream f1;
-    f1.open("Level/Level1.txt");
+    f1.open(FileName);
+    //f1.open("Level/Level1.txt");
     if (!f1.is_open())
     {
         cout<<"Unable to open"<<endl;
@@ -628,7 +670,7 @@ void Placer(){
            {
                if(_grid[i][j] == 1)         // 1 is for wall
                {
-                   cout<<" "<<i<<"  "<<j<<"  "<<wallCount<<endl;
+                //   cout<<" "<<i<<"  "<<j<<"  "<<wallCount<<endl;
                             W[wallCount].wallInit(M->getGridSize(),"images/wall.png");// Load walls
                             W[wallCount].placeWall(i,j);                              // place each brick
                                 wallCount++;
@@ -686,23 +728,21 @@ void init()
     glEnable(GL_BLEND);                                 //display images with transparent
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        menu->loadBackgroundImage("images/Menu.jpg");
-        menu->loadLevelOptionImage("images/mainMenu.png");
+
 
 
     M->loadBackgroundImage("images/bak.jpg");           // Load maze background image
     P->loadArrowImage("images/arr.png");                // Load arrow image
 
-    menu->PlaceLevelOption(5,5);
-    menu->placeChest(5,5);
-    Placer();
 }
 
 
 void MenuState()
 {
+           menu->loadBackgroundImage("images/mainmenu.jpg");
 
       cout<<"Main Menu "<<endl;
+
       glClear (GL_COLOR_BUFFER_BIT);        // clear display screen
 
 
@@ -710,13 +750,7 @@ void MenuState()
             menu->drawBackground();
             glPopMatrix();
 
-            glPushMatrix();
-            menu->drawGrid();
-           glPopMatrix();
 
-            glPushMatrix();
-            menu->drawLevelOption();
-           glPopMatrix();
         glutSwapBuffers();
 }
 
@@ -764,18 +798,66 @@ glClear (GL_COLOR_BUFFER_BIT);        // clear display screen
 }
 
 
+void GameOver()
+{
+
+       menu->loadBackgroundImage("images/gameover.jpg");
+      //  menu->loadLevelOptionImage("images/mainMenu.png");
+
+      cout<<"Game Over"<<endl;
+
+      glClear (GL_COLOR_BUFFER_BIT);        // clear display screen
+
+
+            glPushMatrix();
+            menu->drawBackground();
+            glPopMatrix();
+
+
+        glutSwapBuffers();
+}
+void Won()
+{
+        menu->loadBackgroundImage("images/won.jpg");
+      //  menu->loadLevelOptionImage("images/mainMenu.png");
+
+      cout<<"Won"<<endl;
+
+      glClear (GL_COLOR_BUFFER_BIT);        // clear display screen
+
+
+            glPushMatrix();
+            menu->drawBackground();
+            glPopMatrix();
+
+
+        glutSwapBuffers();
+
+}
 
 void display(void)
 {
 
     if (state ==0)
     {
+
         MenuState();
+
     }
-    else
+    else if(state ==1)
         {
+
             Gamestate();           // Game State
         }
+    else if(state ==2)
+    {
+        GameOver();
+    }
+    else if (state==3)
+    {
+        Won();
+    }
+
 
 }
 
@@ -788,8 +870,8 @@ void key(unsigned char key, int x, int y)
 
     switch (key)
     {
-        case ' ':
-             P->shootArrow();
+        //case ' ':
+        //     P->shootArrow();
         break;
         case 27 :                       // esc key to exit
         case 'q':
@@ -802,6 +884,8 @@ void key(unsigned char key, int x, int y)
 
          if(_grid[x1][y1+1]!=1)
             P->movePlayer("up",P->frames);
+
+              solidsearch();
               collisionDetector();
 
     break;
@@ -811,7 +895,9 @@ void key(unsigned char key, int x, int y)
            collisionDetector();
         if(_grid[x1][y1-1]!=1)
         P->movePlayer("down",P->frames);
-      collisionDetector();
+
+      solidsearch();
+       collisionDetector();
 
     break;
 
@@ -821,7 +907,8 @@ void key(unsigned char key, int x, int y)
 
           if(_grid[x1-1][y1]!=1)
          P->movePlayer("left",P->frames);
-          collisionDetector();
+          solidsearch();
+           collisionDetector();
 
         break;
 
@@ -830,13 +917,41 @@ void key(unsigned char key, int x, int y)
 
          if(_grid[x1+1][y1]!=1)
         P->movePlayer("right",P->frames);
-         collisionDetector();
+         solidsearch();
+          collisionDetector();
 
             break;
 
-    case 'n':
-            state =1;
+    case '1':
+        if (state==0)
+        {
+            FileName = "Level/Level1.txt";
+            state=1;
+            Placer();
+        }
+
     break;
+    case '2':
+            FileName = "Level/Level2.txt";
+            state=1;
+            Placer();
+        break;
+    case '3':
+            FileName = "Level/Level3.txt";
+            state=1;
+            Placer();
+        break;
+    case '4':
+            FileName = "Level/Level4.txt";
+            state=1;
+            Placer();
+        break;
+    case 'b':
+        if (state == 2||state ==3)
+        {
+
+            state =0;
+        }
     }
 
     glutPostRedisplay();
@@ -902,9 +1017,28 @@ void mouse(int btn, int state, int x, int y){
 
 void Specialkeys(int key, int x, int y)
 {
-    cout<<"key "<<key<<endl;
+      switch(key)
+    {
+    case GLUT_KEY_UP:
+        P->shootArrow("up");
+    break;
 
-    // Your Code here
+    case GLUT_KEY_DOWN:
+     P->shootArrow("down");
+
+    break;
+
+    case GLUT_KEY_LEFT:
+     P->shootArrow("left");
+
+
+    break;
+
+    case GLUT_KEY_RIGHT:
+         P->shootArrow("right");
+    break;
+
+   }
 
 
   glutPostRedisplay();
